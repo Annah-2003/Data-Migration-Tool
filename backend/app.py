@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from db import init_db
+from db import init_db, db  
 from models import OldSystem, NewSystem
 
 app = Flask(__name__)
