@@ -1,25 +1,25 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Header from './components/Header';
+import Migration from './components/Migration';
+import MigrationStatus from './components/MigrationStatus';
+import Footer from './components/Footer';
+import { CssBaseline, Container } from '@mui/material';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [progress, setProgress] = useState(0);
+
+    return (
+        <>
+            <CssBaseline />
+            <Header />
+            <Container>
+                <Migration />
+                <MigrationStatus progress={progress} />
+            </Container>
+            <Footer />
+        </>
+    );
 }
 
 export default App;
